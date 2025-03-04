@@ -4,7 +4,7 @@ import { Database } from "./database";
 import { Temporal } from "@js-temporal/polyfill";
 
 function convert(date: Date | undefined | Temporal.PlainDate) {
-  return date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate();
+  if (date instanceof Date) return date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate();
 }
 
 // Refactor the following code to get rid of the legacy Date class.
