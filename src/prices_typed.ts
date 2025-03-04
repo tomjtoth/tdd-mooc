@@ -3,9 +3,9 @@ import express from "express";
 import { Database } from "./database";
 import { Temporal } from "@js-temporal/polyfill";
 
-const PD = Temporal.PlainDate;
+type PD = Temporal.PlainDate;
 
-function convert(date: Date | Temporal.PlainDate): Temporal.PlainDate {
+function convert(date: Date | PD): PD {
   return date instanceof Date ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : date;
 }
 
