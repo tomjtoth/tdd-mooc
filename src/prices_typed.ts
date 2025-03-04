@@ -5,7 +5,7 @@ import { Temporal } from "@js-temporal/polyfill";
 
 type PD = Temporal.PlainDate;
 
-function convert(date: Date | PD | undefined): PD {
+function convert(date: Date | PD | undefined): PD | undefined {
   return date && (date instanceof Date ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : date);
 }
 
