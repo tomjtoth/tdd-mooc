@@ -89,6 +89,7 @@ function createApp(database: Database) {
     let dateTemp = convert(date);
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
+      let holidayTemp = convert(holiday);
       if (
         date &&
         date.getFullYear() === holiday.getFullYear() &&
