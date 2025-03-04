@@ -81,11 +81,11 @@ function createApp(database: Database) {
     return reduction;
   }
 
-  function isMonday(date: Date | Temporal.PlainDate) {
+  function isMonday(date: Temporal.PlainDate) {
     return convert(date).dayOfWeek === 1;
   }
 
-  function isHoliday(date: Date | Temporal.PlainDate) {
+  function isHoliday(date: Temporal.PlainDate) {
     const holidays = database.getHolidays();
     let dateTemp = convert(date);
     for (let row of holidays) {
