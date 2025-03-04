@@ -1,8 +1,9 @@
 import "./polyfills";
 import express from "express";
 import { Database } from "./database";
+import { Temporal } from "@js-temporal/polyfill";
 
-function convert(date: Date) {
+function convert(date: Date | undefined | Temporal.PlainDate) {
   return date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate();
 }
 
