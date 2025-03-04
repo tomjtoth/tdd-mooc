@@ -32,9 +32,9 @@ function createApp(database: Database) {
     res.json({ cost });
   });
 
-  function parseDate(dateString: string | undefined): Date | undefined {
+  function parseDate(dateString: string | undefined): PD | undefined {
     if (dateString) {
-      return new Date(dateString);
+      return Temporal.PlainDate.from(dateString);
     }
   }
 
